@@ -1,0 +1,38 @@
+import pandas as pd   #we wil import libraries first
+import numpy as np
+
+dataset=pd.read_csv('parkinsons.data')
+dataset.head()
+
+
+
+
+dataset.shape
+dataset.info()
+
+dataset.isnull()    #to check any missing data
+
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=0)
+
+x_test=sc.fit(x_test)
+
+from sklearn.ensemble import RandomForestClassifier
+svc=RandomForestClassifier(n_estimators=10,random_state=0)
+svc.fit(x_train,y_train)
+
+
+prediction=svc.predict(x_train)
+#from sklearn.metrics import accuracy_score
+#accuracy
+
+from sklearn.metrics import accuracy_score
+accuracy_score(y_train,prediction)
+
+
+
+print(are)
+if are[0]==0:
+  print("The person has the disease")
+else:
+  print("The person does not have the disease")
